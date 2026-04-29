@@ -25,18 +25,18 @@ class Plain(commands.Cog):
 
         content = None
 
-        # 1. Plain text
-        if message.content:
-            content = message.content
-
-        # 2. Embed
-        elif message.embeds:
+        # 1. Embed
+        if message.embeds:
             embed = message.embeds[0]
 
             if embed.description:
                 content = embed.description
             elif embed.fields:
                 content = "\n".join(f"{f.name}: {f.value}" for f in embed.fields)
+
+        # 2. Plain text (Fallback)
+        elif message.content:
+            content = message.content
 
         if not content:
             return await ctx.send("No content found")
