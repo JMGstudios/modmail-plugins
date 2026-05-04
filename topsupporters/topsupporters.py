@@ -7,6 +7,7 @@ from collections import Counter
 from typing import Any, Dict, Tuple
 
 import discord
+import logging
 from discord.ext import commands
 
 from core.models import getLogger
