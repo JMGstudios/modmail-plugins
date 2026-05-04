@@ -1,3 +1,5 @@
+"Plugin to retrieve every staff member that has been participating in the modmail thread, and list them in order in the final close embed."
+
 from __future__ import annotations
 
 import asyncio
